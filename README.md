@@ -1,7 +1,6 @@
 # Custom Quadcopter Project
 
 This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE flight controller and running ArduPilot firmware.  
-(*Originally prototyped with a CubePilot Cube Red — migrated to Matek for the first build to reduce cost and simplify setup.*)
 
 ## Goals
 - Max flight time
@@ -10,10 +9,11 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 
 ## Key Components
 - Matek F405-HDTE flight controller
-- 4-in-1 HGLRC SPECTER 60A ESC
+- DYS 65A 2–8S AM32 4-in-1 ESC (30×30)
 - 3112 900KV brushless motors
 - DJI 1045 / 1147 carbon props
 - 4S LiPo battery (3S & 6S also tested)
+
 
 <details>
 <summary><strong>Repository Structure</strong></summary>
