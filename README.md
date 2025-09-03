@@ -19,12 +19,13 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 <summary><strong>Repository Structure</strong></summary>
 
 ```
-quadcopter-project/
+quad-001/
 │
 ├── docs/                # Build notes, wiring diagrams, schematics, checklists
-│   ├── wiring/          # ESC-FC diagrams, pinouts
 │   ├── bom/             # Bill of materials spreadsheets
-│   └── setup/           # Step-by-step guides, calibration notes
+│   ├── images/          # Build photos
+│   ├── setup/           # Step-by-step guides, calibration notes
+│   └── wiring/          # ESC-FC diagrams, pinouts
 │
 ├── firmware/            # Flight controller firmware configs and parameters
 │   ├── ardupilot/       # Parameter files (.param) and tuning notes
@@ -52,7 +53,6 @@ quadcopter-project/
 │
 ├── images/              # Build photos
 ├── models/              # Legacy folder (consolidate into /cad long term)
-├── BOM/                 # Legacy folder (consolidate into /docs/bom long term)
 ├── flight-logs/         # Flight logs
 └── README.md            # Project overview, quickstart, links
 ```
@@ -65,7 +65,6 @@ quadcopter-project/
 
 ## Bill of Materials (BOM)
 - CSV format in [`/docs/bom`](./docs/bom)  
-- Older versions in [`/BOM`](./BOM)
 
 ## Tuning & Flight Logs
 - PID tuning checklist: [`docs/setup/tuning-checklist.md`](./docs/setup/tuning-checklist.md)
@@ -73,9 +72,6 @@ quadcopter-project/
 
 ## Firmware & Params
 - ArduPilot config: [`firmware/ardupilot/quad.param`](./firmware/ardupilot/quad.param)
-
-## Build Photos
-See [`/images`](./images)
 
 ## License
 MIT License – free to use, modify, and share.
