@@ -29,6 +29,7 @@ quad-001/
 │
 ├── firmware/            # Flight controller firmware configs and parameters
 │   ├── ardupilot/       # Parameter files (.param) and tuning notes
+│   ├── esc/             # ESC Paramters
 │   ├── qgroundcontrol/  # Custom QGC mods, QML, build scripts
 │   └── stm32/           # Future STM32 FC project (drivers, experiments)
 │
