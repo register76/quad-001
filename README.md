@@ -62,7 +62,6 @@ quad-001/
 
 ## CAD & 3D Models
 - Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
-- Legacy models in [`/models`](./models)
 
 ## Bill of Materials (BOM)
 - CSV format in [`/docs/bom`](./docs/bom)  
@@ -73,6 +72,7 @@ quad-001/
 
 ## Firmware & Params
 - ArduPilot config: [`firmware/ardupilot/quad.param`](./firmware/ardupilot/quad.param)
+- ESC config:[`firmware/esc/`](./firmware/esc/)
 
 ## License
 MIT License – free to use, modify, and share.
