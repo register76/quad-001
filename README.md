@@ -14,6 +14,28 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - DJI 1045 / 1147 carbon props
 - 4S LiPo battery (3S & 6S also tested)
 
+## 📐 Frame & Layout
+- 450 mm X-frame design.
+- Components temporarily secured with Velcro/zip ties.
+- Permanent 3D-printed mounts planned for a later phase.
+
+## ⚡ Power & Propulsion
+- Motors: 3112 900 KV brushless outrunners (14-pole).
+- Propellers: 1147 (11×4.7).
+- ESC: DYS 65 A 2–8 S AM32 4-in-1 (30×30 stack).
+- Battery: Primarily 4 S, with 3 S and 6 S packs available for testing.
+- Power rail capacitor: Installed for ESC stability.
+
+## 🎛️ Flight Controller & Electronics
+- Flight Controller: Matek F405-HDTE.
+- Receiver: To be finalized (RadioMaster Boxer + ExpressLRS considered).
+- Servo rail voltage: Confirmed at 5 V.
+- Integration: FC wired to ESC, motor order verified, motor directions corrected in AM32 Configurator.
+
+## 🧭 Companion & Telemetry
+- Companion computer: Raspberry Pi 3 running Rpanion.
+- Camera options: Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
+- Telemetry: PiFi Wi-Fi streaming with MAVLink router planned.0
 
 <details>
 <summary><strong>Repository Structure</strong></summary>
