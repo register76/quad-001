@@ -37,6 +37,20 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - Camera options: Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
 - Telemetry: PiFi Wi-Fi streaming with MAVLink router planned.0
 
+## CAD & 3D Models
+- Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
+
+## Bill of Materials (BOM)
+- CSV format in [`/docs/bom`](./docs/bom)  
+
+## Tuning & Flight Logs
+- PID tuning checklist: [`docs/setup/tuning-checklist.md`](./docs/setup/tuning-checklist.md)
+- Flight logs: [`/flight-logs`](./flight-logs)
+
+## Firmware & Params
+- ArduPilot config: [`firmware/ardupilot/quad.param`](./firmware/ardupilot/quad.param)
+- ESC config:[`firmware/esc/`](./firmware/esc/)
+
 <details>
 <summary><strong>Repository Structure</strong></summary>
 
@@ -81,20 +95,6 @@ quad-001/
 ```
 
 </details>
-
-## CAD & 3D Models
-- Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
-
-## Bill of Materials (BOM)
-- CSV format in [`/docs/bom`](./docs/bom)  
-
-## Tuning & Flight Logs
-- PID tuning checklist: [`docs/setup/tuning-checklist.md`](./docs/setup/tuning-checklist.md)
-- Flight logs: [`/flight-logs`](./flight-logs)
-
-## Firmware & Params
-- ArduPilot config: [`firmware/ardupilot/quad.param`](./firmware/ardupilot/quad.param)
-- ESC config:[`firmware/esc/`](./firmware/esc/)
 
 ## License
 MIT License – free to use, modify, and share.
