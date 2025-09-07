@@ -11,7 +11,7 @@
 //-------------------
 // USER PARAMETERS 
 //-------------------
-battery           = [47, 160, 32];   // [W, L, H]  (width, length, height) in mm
+battery           = [47, 170, 32];   // [W, L, H]  (width, length, height) in mm
 clearance         = 0.30;            // per-side clearance inside pocket (ABS ≈ 0.3–0.4)
 wallThickness     = 3.00;            // wall thickness
 floorThickness    = 3.20;            // floor thickness
@@ -21,7 +21,7 @@ strapWidth       = 20.0;                // strap width (typical 20 mm)
 slotLengthY      = strapWidth + 2.0;    // along Y (give ~1 mm per side)
 slotThicknessZ   = 3.0;                 // vertical opening (Z) for the strap thickness
 slot1OffsetFront = 10.0;                // first slot center from inner FRONT (Y)
-slotSpacingY     = 120.0;               // distance between the two slots along Y
+slotSpacingY     = 130.0;               // distance between the two slots along Y
 
 // Cable exit notch (front lip)
 cableNotchWidth = 12.0;
