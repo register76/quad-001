@@ -9,11 +9,11 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 
 ## Key Components
 - [Matek F405-HDTE](https://www.mateksys.com/?portfolio=f405-hdte) flight controller
-- DYS 65A 2–8S AM32 4-in-1 ESC (30×30)
-- 3112 900KV brushless motors
-- DJI 1045 / 1147 carbon props
-- 4S LiPo battery (3S & 6S also tested)
-- [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
+- [DYS 65A 2–8S AM32](https://pyrodrone.com/products/dys-am32-65a-2-8s-4in1-esc-30x30mm?srsltid=AfmBOopQYTArh_CXTaMVYLukG8EtwCzhfD9XbQw8DkJbP9Ws5KrN1L8A) 4-in-1 ESC (30×30)
+- [3112 900KV brushless motors](https://www.amazon.com/dp/B0F7H2DN7J?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_3&th=1)
+- [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
+- [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
+- 4S LiPo battery
 
 ## 📐 Frame & Layout
 - 450 mm X-frame design.
