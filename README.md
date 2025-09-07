@@ -27,8 +27,8 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - Power rail capacitor: Installed for ESC stability.
 
 ## 🎛️ Flight Controller & Electronics
-- Flight Controller: Matek F405-HDTE.
-- Receiver: To be finalized (RadioMaster Boxer + ExpressLRS considered).
+- Flight Controller: [Matek F405-HDTE](https://www.mateksys.com/?portfolio=f405-hdte)
+- Receiver: [RadioMaster Rp4Td](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
 - Servo rail voltage: Confirmed at 5 V.
 - Integration: FC wired to ESC, motor order verified, motor directions corrected in AM32 Configurator.
 
