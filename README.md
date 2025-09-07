@@ -38,6 +38,16 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - Servo rail voltage: Confirmed at 5 V.
 - Integration: FC wired to ESC, motor order verified, motor directions corrected in AM32 Configurator.
 
+## 🎮 Radio & Receiver
+- **Transmitter**: [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2) (ExpressLRS 2.4 GHz)
+  - Compact, full-size gimbals, supports long-range ELRS.
+  - Paired directly with the RP4TD receiver over CRSF protocol.
+- **Receiver**: [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
+  - Dual antenna diversity for strong link quality.
+  - Connected to the Matek F405-HDTE on **UART2** (TX2/RX2) with 5V and GND.
+- **Protocol**: ExpressLRS (CRSF)
+- **Antenna Mounts**: 45° or 90° tube mounts, positioned for clear radiation pattern and cable reach.
+
 ## 🧭 Companion & Telemetry
 - Companion computer: Raspberry Pi 3 running Rpanion.
 - Camera options: Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
