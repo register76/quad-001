@@ -2,6 +2,10 @@
 
 This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE flight controller and running ArduPilot firmware.  
 
+## Project Status
+🚧 Work in Progress — Frame and wiring complete, first flight pending.  
+Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the companion computer.
+
 ## Goals
 - Max flight time
 - Modular design
