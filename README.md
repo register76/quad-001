@@ -25,7 +25,7 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - Motors: 3112 900 KV brushless outrunners (14-pole).
 - Propellers: 1147 (11×4.7).
 - ESC: DYS 65 A 2–8 S AM32 4-in-1 (30×30 stack).
-- Battery: Primarily 4 S, with 3 S and 6 S packs available for testing.
+- Battery: Primarily 4S, with 3S and 6S packs available for testing.
 - Power rail capacitor: Installed for ESC stability.
 
 ## 🎛️ Flight Controller & Electronics
@@ -93,10 +93,11 @@ quad-001/
 ├── images/              # Build photos
 ├── models/              # Legacy folder (consolidate into /cad long term)
 ├── flight-logs/         # Flight logs
+├── LICENSE.md           # Project license
 └── README.md            # Project overview, quickstart, links
 ```
 
 </details>
 
 ## License
-MIT License – free to use, modify, and share.
+This project is licensed under the [MIT License](./LICENSE).
