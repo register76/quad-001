@@ -13,6 +13,7 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - [3112 900KV brushless motors](https://www.amazon.com/dp/B0F7H2DN7J?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_3&th=1)
 - [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
 - [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
+- [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2)
 - 4S LiPo battery
 
 ## 📐 Frame & Layout
