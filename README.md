@@ -8,11 +8,12 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 - Open-frame for FPV and sensor expansion
 
 ## Key Components
-- Matek F405-HDTE flight controller
+- [Matek F405-HDTE](https://www.mateksys.com/?portfolio=f405-hdte) flight controller
 - DYS 65A 2–8S AM32 4-in-1 ESC (30×30)
 - 3112 900KV brushless motors
 - DJI 1045 / 1147 carbon props
 - 4S LiPo battery (3S & 6S also tested)
+- [RadioMaster Rp4Td](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
 
 ## 📐 Frame & Layout
 - 450 mm X-frame design.
@@ -35,7 +36,7 @@ This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE fl
 ## 🧭 Companion & Telemetry
 - Companion computer: Raspberry Pi 3 running Rpanion.
 - Camera options: Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
-- Telemetry: PiFi Wi-Fi streaming with MAVLink router planned.0
+- Telemetry: PiFi Wi-Fi streaming with MAVLink router planned.
 
 ## CAD & 3D Models
 - Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
@@ -65,7 +66,7 @@ quad-001/
 │
 ├── firmware/            # Flight controller firmware configs and parameters
 │   ├── ardupilot/       # Parameter files (.param) and tuning notes
-│   ├── esc/             # ESC Paramters
+│   ├── esc/             # ESC Parameters
 │   ├── qgroundcontrol/  # Custom QGC mods, QML, build scripts
 │   └── stm32/           # Future STM32 FC project (drivers, experiments)
 │
