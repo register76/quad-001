@@ -21,7 +21,7 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - 4S LiPo battery
 
 ## 📐 Frame & Layout
-- 450 mm X-frame design.
+- [450 mm X-frame design](https://www.amazon.com/dp/B0776WLHX7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1)
 - Components temporarily secured with Velcro/zip ties.
 - Permanent 3D-printed mounts planned for a later phase.
 
