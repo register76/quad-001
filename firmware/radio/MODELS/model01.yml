@@ -95,7 +95,7 @@ mixData:
    srcRaw: SC
    carryTrim: 0
    mixWarn: 0
-   mltpx: ADD
+   mltpx: REPL
    offset: 0
    swtch: "NONE"
    flightModes: 000000000
@@ -180,7 +180,7 @@ limitData:
       ppmCenter: 0
       offset: 0
       symetrical: 0
-      revert: 0
+      revert: 1
       curve: 32
       name: ""
    3:
@@ -250,6 +250,48 @@ expoData:
    trimSource: 0
    srcRaw: Rud
    chn: 3
+   swtch: "NONE"
+   flightModes: 000000000
+   weight: 100
+   name: ""
+   offset: 0
+   curve: 
+      type: 1
+      value: 0
+ -
+   mode: 3
+   scale: 0
+   trimSource: 0
+   srcRaw: POT1
+   chn: 3
+   swtch: "NONE"
+   flightModes: 000000000
+   weight: 100
+   name: ""
+   offset: 0
+   curve: 
+      type: 1
+      value: 0
+ -
+   mode: 3
+   scale: 0
+   trimSource: 0
+   srcRaw: SC
+   chn: 4
+   swtch: "NONE"
+   flightModes: 000000000
+   weight: 100
+   name: "MODE"
+   offset: 0
+   curve: 
+      type: 1
+      value: 0
+ -
+   mode: 3
+   scale: 0
+   trimSource: 0
+   srcRaw: POT1
+   chn: 4
    swtch: "NONE"
    flightModes: 000000000
    weight: 100
@@ -349,6 +391,8 @@ inputNames:
       val: "Thr"
    3:
       val: "Rud"
+   4:
+      val: "05"
 potsWarnEnabled: 0
 telemetrySensors: 
    0:
