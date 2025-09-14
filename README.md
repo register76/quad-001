@@ -18,6 +18,7 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
 - [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
 - [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2)
+- [HGLRC GPS / Compass](https://www.hglrc.com/products/m100-5883-gps?srsltid=AfmBOoq5upiWIUeaING3ysRxMJ71UZ72I3lojhzPYYxISSO0KZAK4p26)
 - 4S LiPo battery
 
 ## 📐 Frame & Layout
