@@ -9,8 +9,8 @@ local N_HDG  = "Hdg"
 local N_SATS = "Sats"
 local N_BATP = "Bat%"
 local N_LQ   = "RQly"
-local N_R1   = "1RSS (dB)"
-local N_R2   = "2RSS (dB)"
+local N_R1   = "1RSS"
+local N_R2   = "2RSS"
 
 -- cache field IDs and last values
 local id, last = {}, {
