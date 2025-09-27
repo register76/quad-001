@@ -49,10 +49,29 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - **Protocol**: ExpressLRS (CRSF)
 - **Antenna Mounts**: 45° or 90° tube mounts, positioned for clear radiation pattern and cable reach.
 
+## 🎮 Serial Ports
+
+### Active links
+- **GPS/Compass (HGLRC M100-5883)**
+  - **GPS (UART 5):** `SERIAL3_PROTOCOL = 5 (GPS)` @ default baud for module
+  - **Compass:** I²C (external) → enable compass and perform calibration
+
+- **RC / ExpressLRS**
+  - **CRSF (UART 6):** `SERIAL5_PROTOCOL = 23 (CRSF)`  
+
+### Port Map
+| Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
+|--------------------|-----------------|----------------------------------------------|--------------------------|
+| GPS (M100)         | UART **5**      | `SERIAL3_PROTOCOL=5`                         | GPS TX/RX ↔ FC RX/TX     |
+| Compass (5883)     | I²C             | Enable ext compass; run compass calibration  | On same puck             |
+| RC (ELRS CRSF)     | UART **6**      | `SERIAL5_PROTOCOL=23`                        | Set RC options as needed |
+
+
+
 ## 🧭 Companion & Telemetry
-- Companion computer: Raspberry Pi 3 running Rpanion.
-- Camera options: Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
-- Telemetry: PiFi Wi-Fi streaming with MAVLink router planned.
+- Companion computer: **TBD** Raspberry Pi 3 running Rpanion.
+- Camera options: **TBD** Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
+- Telemetry: **TBD** PiFi Wi-Fi streaming with MAVLink router planned.
 
 ## CAD & 3D Models
 - Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
