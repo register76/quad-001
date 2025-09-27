@@ -59,13 +59,16 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - **RC / ExpressLRS**
   - **CRSF (UART 6):** `SERIAL5_PROTOCOL = 23 (CRSF)`  
 
+- ** Motor ESC Telemetry **
+ - ** ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
+ 
 ### Port Map
 | Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
 |--------------------|-----------------|----------------------------------------------|--------------------------|
 | GPS (M100)         | UART **5**      | `SERIAL3_PROTOCOL=5`                         | GPS TX/RX ↔ FC RX/TX     |
 | Compass (5883)     | I²C             | Enable ext compass; run compass calibration  | On same puck             |
 | RC (ELRS CRSF)     | UART **6**      | `SERIAL5_PROTOCOL=23`                        | Set RC options as needed |
-
+| ESC (DYS-65A)      | UART **3**      | `SERIAL2_PROTOCOL=16`                        |                          |
 
 
 ## 🧭 Companion & Telemetry
