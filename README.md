@@ -3,8 +3,8 @@
 This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE flight controller and running ArduPilot firmware.  
 
 ## Project Status
-🚧 Work in Progress — Frame and wiring complete, first flight pending.  
-Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the companion computer.
+🚧 Work in Progress — Frame and wiring complete, first flight complete.  
+Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camera and companion computer.
 
 ## Goals
 - Max flight time
@@ -49,7 +49,7 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 - **Protocol**: ExpressLRS (CRSF)
 - **Antenna Mounts**: 45° or 90° tube mounts, positioned for clear radiation pattern and cable reach.
 
-## 🎮 Serial Ports
+## 🧵 Serial Ports
 
 ### Active links
 - **GPS/Compass (HGLRC M100-5883)**
@@ -73,8 +73,13 @@ Next steps: finalize 3D-printed component mounts, tune PIDs, and integrate the c
 
 ## 🧭 Companion & Telemetry
 - Companion computer: **TBD** Raspberry Pi 3 running Rpanion.
-- Camera options: **TBD** Raspberry Pi camera modules (IMX477 HQ, IMX462, others).
-- Telemetry: **TBD** PiFi Wi-Fi streaming with MAVLink router planned.
+- Camera options: **TBD** 
+  - [FOXEERFPV Camera Razer Mini](https://www.amazon.com/gp/product/B07ZKPDPLM/ref=ox_sc_saved_title_1?smid=A1S7UXKBIJXX1H&th=1)
+  - [HGLRC Zeus350mW VTX](https://www.amazon.com/gp/product/B08MQ4ZDVF/ref=ox_sc_saved_title_2?smid=A399B0GHKF2YQX&psc=1)
+  - [FOXEER Lollipop FPV U.FL Antenna 5.8G](https://www.amazon.com/gp/product/B07WLCFM5H/ref=ox_sc_saved_title_3?smid=A1JGQIWP459RKC&psc=1)
+- Telemetry: **TBD** 
+  - PiFi Wi-Fi streaming with MAVLink router planned.
+  - RFD900
 
 ## CAD & 3D Models
 - Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
