@@ -60,7 +60,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
   - **CRSF (UART 6):** `SERIAL5_PROTOCOL = 23 (CRSF)`  
 
 - **Motor ESC Telemetry**
- - **ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
+  - **ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
  
 ### Port Map
 | Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
