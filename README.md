@@ -59,8 +59,8 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - **RC / ExpressLRS**
   - **CRSF (UART 6):** `SERIAL5_PROTOCOL = 23 (CRSF)`  
 
-- ** Motor ESC Telemetry **
- - ** ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
+- **Motor ESC Telemetry**
+ - **ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
  
 ### Port Map
 | Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
@@ -72,12 +72,12 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 
 ## 🧭 Companion & Telemetry
-- Companion computer: **TBD** Raspberry Pi 3 running Rpanion.
-- Camera options: **TBD** 
+- **Companion computer** *TBD* Raspberry Pi 3 running Rpanion.
+- **Camera options** *TBD* 
   - [FOXEERFPV Camera Razer Mini](https://www.amazon.com/gp/product/B07ZKPDPLM/ref=ox_sc_saved_title_1?smid=A1S7UXKBIJXX1H&th=1)
   - [HGLRC Zeus350mW VTX](https://www.amazon.com/gp/product/B08MQ4ZDVF/ref=ox_sc_saved_title_2?smid=A399B0GHKF2YQX&psc=1)
   - [FOXEER Lollipop FPV U.FL Antenna 5.8G](https://www.amazon.com/gp/product/B07WLCFM5H/ref=ox_sc_saved_title_3?smid=A1JGQIWP459RKC&psc=1)
-- Telemetry: **TBD** 
+- **Telemetry** *TBD* 
   - PiFi Wi-Fi streaming with MAVLink router planned.
   - RFD900
 
