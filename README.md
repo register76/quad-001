@@ -19,6 +19,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
 - [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2)
 - [HGLRC GPS / Compass](https://www.hglrc.com/products/m100-5883-gps?srsltid=AfmBOoq5upiWIUeaING3ysRxMJ71UZ72I3lojhzPYYxISSO0KZAK4p26)
+- [RFD900x](https://rfdesign.com.au/modems/)
 - 4S LiPo battery
 
 ## 📐 Frame & Layout
@@ -72,17 +73,16 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 
 ## 🧭 Companion & Telemetry
+- **Telemetry**
+  - [RFD900](https://rfdesign.com.au/modems/)
 - **Companion computer** *TBD* Raspberry Pi 3 running Rpanion.
 - **Camera options** *TBD* 
   - [FOXEERFPV Camera Razer Mini](https://www.amazon.com/gp/product/B07ZKPDPLM/ref=ox_sc_saved_title_1?smid=A1S7UXKBIJXX1H&th=1)
   - [HGLRC Zeus350mW VTX](https://www.amazon.com/gp/product/B08MQ4ZDVF/ref=ox_sc_saved_title_2?smid=A399B0GHKF2YQX&psc=1)
   - [FOXEER Lollipop FPV U.FL Antenna 5.8G](https://www.amazon.com/gp/product/B07WLCFM5H/ref=ox_sc_saved_title_3?smid=A1JGQIWP459RKC&psc=1)
-- **Telemetry** *TBD* 
-  - PiFi Wi-Fi streaming with MAVLink router planned.
-  - RFD900
 
 ## CAD & 3D Models
-- Fusion 360, OpenSCAD, and STL files in [`/cad`](./cad)
+- OpenSCAD, and STL files in [`/cad`](./cad)
 
 ## Bill of Materials (BOM)
 - CSV format in [`/docs/bom`](./docs/bom)  
