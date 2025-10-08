@@ -62,6 +62,9 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 - **Motor ESC Telemetry**
   - **ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
+
+- **RFD900x Telemetry**
+  - **RFD900x (UART 1):** `SERIAL?_PROTOCOL = 2 (Mavlink 2)`  
  
 ### Port Map
 | Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
@@ -70,6 +73,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 | Compass (5883)     | I²C             | Enable ext compass; run compass calibration  | On same puck             |
 | RC (ELRS CRSF)     | UART **6**      | `SERIAL5_PROTOCOL=23`                        | Set RC options as needed |
 | ESC (DYS-65A)      | UART **3**      | `SERIAL2_PROTOCOL=16`                        |                          |
+| RFD900x            | UART **1**      | `SERIAL?_PROTOCOL=2`                        |                          |
 
 
 ## 🧭 Companion & Telemetry
