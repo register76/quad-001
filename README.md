@@ -92,7 +92,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - CSV format in [`/docs/bom`](./docs/bom)  
 
 ## Tuning & Flight Logs
-- PID tuning checklist: [`docs/setup/tuning-checklist.md`](./docs/setup/tuning-checklist.md)
+- PID tuning checklist: [`docs/tuning/tuning-checklist.md`](./docs/tuning/tuning-checklist.md)
 - Flight logs: [`/flight-logs`](./flight-logs)
 
 ## Firmware & Params
