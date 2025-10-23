@@ -12,7 +12,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - Open-frame for FPV and sensor expansion
 
 ## Key Components
-- [Matek F405-HDTE](https://www.mateksys.com/?portfolio=f405-hdte) flight controller
+- [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim) flight controller
 - [DYS 65A 2–8S AM32](https://pyrodrone.com/products/dys-am32-65a-2-8s-4in1-esc-30x30mm?srsltid=AfmBOopQYTArh_CXTaMVYLukG8EtwCzhfD9XbQw8DkJbP9Ws5KrN1L8A) 4-in-1 ESC (30×30)
 - [3112 900KV brushless motors](https://www.amazon.com/dp/B0F7H2DN7J?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_3&th=1)
 - [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
@@ -23,7 +23,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - 4S LiPo battery
 
 ## 📐 Frame & Layout
-- [450 mm X-frame design](https://www.amazon.com/dp/B0776WLHX7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1)
+- [S500 X-frame design](https://www.amazon.com/dp/B01N0AX1MZ?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - Components temporarily secured with Velcro/zip ties.
 - Permanent 3D-printed mounts planned for a later phase.
 
@@ -31,11 +31,11 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 - Motors: 3112 900 KV brushless outrunners (14-pole).
 - Propellers: 1147 (11×4.7).
 - ESC: DYS 65 A 2–8 S AM32 4-in-1 (30×30 stack).
-- Battery: Primarily 4S, with 3S and 6S packs available for testing.
+- Battery: 4S
 - Power rail capacitor: Installed for ESC stability.
 
 ## 🎛️ Flight Controller & Electronics
-- Flight Controller: [Matek F405-HDTE](https://www.mateksys.com/?portfolio=f405-hdte)
+- Flight Controller: [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim)
 - Receiver: [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
 - Servo rail voltage: Confirmed at 5 V.
 - Integration: FC wired to ESC, motor order verified, motor directions corrected in AM32 Configurator.
