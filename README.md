@@ -1,6 +1,6 @@
 # Custom Quadcopter Project
 
-This is an endurance-optimized 450 mm quadcopter powered by a Matek F405-HDTE flight controller and running ArduPilot firmware.  
+This is an endurance-optimized S 500 mm quadcopter powered by a Matek H743-SLIM V3 flight controller and running ArduPilot firmware.  
 
 ## Project Status
 🚧 Work in Progress — Frame and wiring complete, first flight complete.  
