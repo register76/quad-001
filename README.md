@@ -3,8 +3,8 @@
 This is an endurance-optimized S 500 mm quadcopter powered by a Matek H743-SLIM V3 flight controller and running ArduPilot firmware.  
 
 ## Project Status
-🚧 Work in Progress — Frame and wiring complete, first flight complete.  
-Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camera and companion computer.
+🚧 Work in Progress — Frame and wiring complete, first flight complete, initial tuning complete.  
+Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D-printed component mounts, integrate camera, rfd900, and companion computer.
 
 ## Goals
 - Max flight time
@@ -24,7 +24,6 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 ## 📐 Frame & Layout
 - [S500 X-frame design](https://www.amazon.com/dp/B01N0AX1MZ?ref=ppx_yo2ov_dt_b_fed_asin_title)
-- Components temporarily secured with Velcro/zip ties.
 - Permanent 3D-printed mounts planned for a later phase.
 
 ## ⚡ Power & Propulsion
@@ -37,8 +36,6 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 ## 🎛️ Flight Controller & Electronics
 - Flight Controller: [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim)
 - Receiver: [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
-- Servo rail voltage: Confirmed at 5 V.
-- Integration: FC wired to ESC, motor order verified, motor directions corrected in AM32 Configurator.
 
 ## 🎮 Radio & Receiver
 - **Transmitter**: [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2) (ExpressLRS 2.4 GHz)
@@ -52,6 +49,21 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 ## 🧵 Serial Ports
 
+# 🧭 Matek H743-SLIM UART Reference Guide
+
+| **Port Label** | **STM32 Peripheral** | **Typical Use** | **ArduPilot SERIALx** | **Protocol** | **Notes / Tips** |
+|----------------|----------------------|-----------------|------------------------|---------------|------------------|
+| **UART1**      | USART1 | 🛰 Telemetry / RFD900 | `SERIAL1_PROTOCOL=2` | MAVLink | Use for RFD900 or other long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
+| **UART2**      | USART2 | 🎮 ELRS Receiver (CRSF) | `SERIAL2_PROTOCOL=23` | CRSF | Hardware inverter-free; ideal for ExpressLRS. |
+| **UART3**      | USART3 | 📡 GPS #1 | `SERIAL3_PROTOCOL=5` | GPS | Pair with I²C compass on same GPS puck. |
+| **UART4**      | UART4 | 📈 ESC Telemetry / GPS #2 | `SERIAL4_PROTOCOL=0` | ESC TLM (auto-detect) | Use ESC TLM RX wire here for current, voltage, RPM. |
+| **UART5**      | UART5 | 🔧 Debug / Secondary Telem / Companion Pi | `SERIAL5_PROTOCOL=2` | MAVLink | Good choice for bench testing or Pi link if Wi-Fi not used. |
+| **UART6**      | USART6 | 🎥 VTX control | `SERIAL6_PROTOCOL=26 (Tramp)` or `28 (SmartAudio)` | VTX | TX-only. Add 1 kΩ inline resistor if noisy. |
+| **UART7**      | UART7 | 🧪 Spare / TF-Luna serial | `SERIAL7_PROTOCOL=9 (Rangefinder)` | Rangefinder | Only if you use UART TF-Luna instead of I²C. |
+| **UART8**      | UART8 | 💻 Companion Pi (alternative) | `SERIAL8_PROTOCOL=2` | MAVLink | Use 57600–921600 baud. Prefer UART-Pi over USB for reliability. |
+| **USB**        | Virtual `SERIAL0` | 🔌 Ground Station | `SERIAL0_PROTOCOL=2` | MAVLink | Main setup + firmware loading port. |
+
+<!--
 ### Active links
 - **GPS/Compass (HGLRC M100-5883)**
   - **GPS (UART 5):** `SERIAL3_PROTOCOL = 5 (GPS)` @ default baud for module
@@ -74,7 +86,7 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 | RC (ELRS CRSF)     | UART **6**      | `SERIAL5_PROTOCOL=23`                        | Set RC options as needed |
 | ESC (DYS-65A)      | UART **3**      | `SERIAL2_PROTOCOL=16`                        |                          |
 | RFD900x            | UART **1**      | `SERIAL?_PROTOCOL=2`                        |                          |
-
+-->
 
 ## 🧭 Companion & Telemetry
 - **Telemetry**
@@ -87,9 +99,6 @@ Next steps: tune PIDs, finalize 3D-printed component mounts, and integrate camer
 
 ## CAD & 3D Models
 - OpenSCAD, and STL files in [`/cad`](./cad)
-
-## Bill of Materials (BOM)
-- CSV format in [`/docs/bom`](./docs/bom)  
 
 ## Tuning & Flight Logs
 - PID tuning checklist: [`docs/tuning/tuning-checklist.md`](./docs/tuning/tuning-checklist.md)
