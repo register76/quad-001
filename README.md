@@ -49,7 +49,7 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 ## 🧵 Serial Ports
 
-# 🧭 Matek H743-SLIM UART Reference Guide
+### 🧭 Matek H743-SLIM UART Reference Guide
 
 | **Port Label** | **STM32 Peripheral** | **Typical Use** | **ArduPilot SERIALx** | **Protocol** | **Notes / Tips** |
 |----------------|----------------------|-----------------|------------------------|---------------|------------------|
