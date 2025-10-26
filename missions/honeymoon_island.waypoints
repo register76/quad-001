@@ -1,0 +1,32 @@
+QGC WPL 110
+# Home will be set automatically when you arm at the launch coordinates
+0 1 0 16 0 0 0 0   28.05353443  -82.80339807   0
+
+# 1) Takeoff + gentle start (face Honeymoon shoreline as ROI)
+1 0 3 22   0   0   0   0    0            0            22         # TAKEOFF 22 m
+2 0 3 178  0   5   0   0    0            0             0         # DO_CHANGE_SPEED 5 m/s
+3 0 3 201  0   0   0   0    28.06480000  -82.81500000  0         # DO_SET_ROI (east side of Honeymoon)
+
+# 2) Spline out from the causeway toward Horseshoe (staying offshore)
+4 0 3 82   0   0   0   0    28.05461400  -82.80339807  22        # ~120 m north of launch
+5 0 3 82   0   0   0   0    28.06073400  -82.80740000  25        # mid-channel toward Horseshoe
+6 0 3 205  0  -10  0   0    0            0             0         # DO_MOUNT_CONTROL tilt -10°
+7 0 3 82   0   0   0   0    28.06480000  -82.80900000  27        # approach SE side of Horseshoe (do not overfly beachgoers)
+
+# 3) Loop the SE side of Horseshoe (arc counter-clockwise offshore)
+8 0 3 82   0   0   0   0    28.06540000  -82.80700000  28
+9 0 3 82   0   0   0   0    28.06630000  -82.80660000  30
+
+# 4) Cross north of Horseshoe and set up the reveal toward Honeymoon
+10 0 3 178 0   6.5 0   0    0            0             0         # speed up to 6.5 m/s
+11 0 3 205 0   -6  0   0    0            0             0         # ease gimbal to -6°
+12 0 3 82  0   0   0   0    28.06780000  -82.80800000  32        # north of Horseshoe
+13 0 3 82  0   0   0   0    28.06680000  -82.81180000  34        # trending toward Honeymoon (offshore)
+14 0 3 205 0   -3  0   0    0            0             0         # gimbal -3° (flatter look)
+
+# 5) Hero hold + return over open water
+15 0 3 19  8   0   0   0    0            0            34         # LOITER_TIME 8 s
+16 0 3 178 0   5   0   0    0            0             0         # slow back to 5 m/s
+17 0 3 82  0   0   0   0    28.06020000  -82.80620000  28        # return leg, offshore
+18 0 3 82  0   0   0   0    28.05520000  -82.80390000  24
+19 0 3 20  0   0   0   0    0            0             0         # RTL
