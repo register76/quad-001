@@ -51,17 +51,17 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 ### 🧭 Matek H743-SLIM UART Reference Guide
 
-| **Port Label** | **STM32 Peripheral** | **Typical Use** | **ArduPilot SERIALx** | **Protocol** | **Notes / Tips** |
+| **Port Label** | **STM32 Peripheral** | **FC PAD LABEL** | **Typical Use** | **ArduPilot SERIALx** | **Protocol** | **Notes / Tips** |
 |----------------|----------------------|-----------------|------------------------|---------------|------------------|
-| **UART1**      | USART1 | 🛰 Telemetry / RFD900 | `SERIAL1_PROTOCOL=2` | MAVLink | Use for RFD900 or other long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
-| **UART2**      | USART2 | 📡 GPS #1 | `SERIAL2_PROTOCOL=23` | GPS | Pair with I²C compass on same GPS puck. |
-| **UART3**      | USART3 | 🎮 ELRS Receiver (CRSF) | `SERIAL3_PROTOCOL=5` | CRSF | Hardware inverter-free; ideal for ExpressLRS. |
-| **UART4**      | UART4 | 📈 ESC Telemetry / GPS #2 | `SERIAL4_PROTOCOL=0` | ESC TLM (auto-detect) | Use ESC TLM RX wire here for current, voltage, RPM. |
-| **UART5**      | UART5 | 🔧 Debug / Secondary Telem / Companion Pi | `SERIAL5_PROTOCOL=2` | MAVLink | Good choice for bench testing or Pi link if Wi-Fi not used. |
-| **UART6**      | USART6 | 🎥 VTX control | `SERIAL6_PROTOCOL=26 (Tramp)` or `28 (SmartAudio)` | VTX | TX-only. Add 1 kΩ inline resistor if noisy. |
-| **UART7**      | UART7 | 🧪 Spare / TF-Luna serial | `SERIAL7_PROTOCOL=9 (Rangefinder)` | Rangefinder | Only if you use UART TF-Luna instead of I²C. |
-| **UART8**      | UART8 | 💻 Companion Pi (alternative) | `SERIAL8_PROTOCOL=2` | MAVLink | Use 57600–921600 baud. Prefer UART-Pi over USB for reliability. |
-| **USB**        | Virtual `SERIAL0` | 🔌 Ground Station | `SERIAL0_PROTOCOL=2` | MAVLink | Main setup + firmware loading port. |
+| **UART1**      | USART1 | 🛰 Telemetry / RFD900 | - |`SERIAL1_PROTOCOL=2` | MAVLink | Use for RFD900 or other long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
+| **UART2**      | USART2 | 📡 GPS #1 | RX2/TX2 | `SERIAL2_PROTOCOL=23` | GPS | Pair with I²C compass on same GPS puck. |
+| **UART3**      | USART3 | 🧪 [TBD] Spare / TF-Luna serial | - | `SERIAL3_PROTOCOL=5` | CRSF | Hardware inverter-free; ideal for ExpressLRS. |
+| **UART4**      | UART4 | 📈 [TBD] ESC Telemetry / GPS #2 | - | `SERIAL4_PROTOCOL=0` | ESC TLM (auto-detect) | Use ESC TLM RX wire here for current, voltage, RPM. |
+| **UART5**      | UART5 | 🔧 [TBD] Debug / Secondary Telem / Companion Pi | - | `SERIAL5_PROTOCOL=2` | MAVLink | Good choice for bench testing or Pi link if Wi-Fi not used. |
+| **UART6**      | USART6 | 🎥 [TBD] VTX control | - | `SERIAL6_PROTOCOL=26 (Tramp)` or `28 (SmartAudio)` | VTX | TX-only. Add 1 kΩ inline resistor if noisy. |
+| **UART7**      | UART7 | 🎮 ELRS Receiver (CRSF) | RX6/TX6 | `SERIAL7_PROTOCOL=23 (ELRS)` | ELRS | Express LRS |
+| **UART8**      | UART8 | 💻 [TBD] Companion Pi (alternative) | - | `SERIAL8_PROTOCOL=2` | MAVLink | Use 57600–921600 baud. Prefer UART-Pi over USB for reliability. |
+| **USB**        | Virtual `SERIAL0` | 🔌 Ground Station | - | `SERIAL0_PROTOCOL=2` | MAVLink | Main setup + firmware loading port. |
 
 <!--
 ### Active links
