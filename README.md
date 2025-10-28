@@ -24,8 +24,8 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 ## 📐 Frame & Layout
 - [S500 X-frame design](https://www.amazon.com/dp/B01N0AX1MZ?ref=ppx_yo2ov_dt_b_fed_asin_title)
-- FC Adapter Plate Mount ['/cad/openscad/fc_plate_30x30_heatset_rect_50x55_engraved.scad'](./cad/openscad/fc_plate_30x30_heatset_rect_50x55_engraved.scad)
-- S500 Top Mount Spacer ['/cad/stl/S500_Spacerv4.stl'](./cad/stl/S500_Spacerv4.stl)
+- [FC Adapter Plate Mount](./cad/openscad/fc_plate_30x30_heatset_rect_50x55_engraved.scad)
+- [S500 Top Mount Spacer](./cad/stl/S500_Spacerv4.stl)
 
 ## ⚡ Power & Propulsion
 - Motors: 3112 900 KV brushless outrunners (14-pole).
