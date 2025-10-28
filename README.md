@@ -59,16 +59,16 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 | **USART2** | RX2/TX2 | 📡 GPS #1 | SERIAL3 | GPS (5) | 115 | Pair with I²C compass on same GPS puck. |
 | **USART3** | RX3/TX3 | 🧪 Spare / TF-Luna serial | SERIAL4 | None (0) | | Leave unused until you need it (set to device-specific later). |
 | **UART4** | RX4/TX4 | 📈 Spare| SERIAL6 | None (0) | | Leave unused until you need it (set to device-specific later). |
-| **USART6** | RX6/TX6 / SERIAL7 |🎮 ELRS Receiver (CRSF) | SERIAL7 | ELRS(23) | 420 | Express LRS (main receiver port). Set BRD_ALT_CONFIG=1 to make RX6/TX6 a true UART; SERIAL7_OPTIONS=0 for CRSF.|
-| **UART7** | RX7/TX7 |  🎥 VTX control | SERIAL1 | Tramp (26) or SmartAudio (28) |  | Use if you want LUA/OSD VTX control. |
+| **USART6** | RX6/TX6 / SERIAL7 |  🎥 VTX control | SERIAL7 | Tramp (26) or SmartAudio (28) |  | Use if you want LUA/OSD VTX control. |
+| **UART7** | RX7/TX7 | 🎮 ELRS Receiver (CRSF) | SERIAL1 |  ELRS(23) | 420 | Express LRS (main receiver port). |
 | **USB**  | USB | 🔌 Ground Station | SERIAL0 | MAVLink (2) |  | Main setup + firmware loading port. |
 
 ### Required Serial Parameters
 ```
-BRD_ALT_CONFIG = 1
-SERIAL7_PROTOCOL = 23
-SERIAL7_BAUD = 420
-SERIAL7_OPTIONS = 0
+BRD_ALT_CONFIG = 0
+SERIAL1_PROTOCOL = 23
+SERIAL1_BAUD = 420
+SERIAL1_OPTIONS = 0
 SERIAL3_PROTOCOL = 5
 SERIAL3_BAUD = 115
 ```
@@ -79,12 +79,12 @@ SERIAL3_BAUD = 115
                  |       Matek H743-SLIM V3      |
                  |        (top-side pads)        |
                  |                               |
-    ELRS RX  ───▶|  RX6  ◀── (ELRS TX)          |
-    ELRS TX  ◀───|  TX6  ───▶ (ELRS RX)         |   ── CRSF / ELRS (SERIAL7)
+    ELRS RX  ───▶|  RX7  ◀── (ELRS TX)          |
+    ELRS TX  ◀───|  TX7  ───▶ (ELRS RX)         |   ── CRSF / ELRS (SERIAL7)
                  |                               |      BRD_ALT_CONFIG = 1
-    GPS TX  ────▶|  RX2  ◀── (GPS TX)           |      SERIAL7_PROTOCOL = 23
-    GPS RX  ◀────|  TX2  ───▶ (GPS RX)          |      SERIAL7_BAUD = 420 (CRSF)
-                 |                               |      SERIAL7_OPTIONS = 0
+    GPS TX  ────▶|  RX2  ◀── (GPS TX)           |      SERIAL1_PROTOCOL = 23
+    GPS RX  ◀────|  TX2  ───▶ (GPS RX)          |      SERIAL1_BAUD = 420 (CRSF)
+                 |                               |      SERIAL1_OPTIONS = 0
     I2C SDA ────▶|  SDA                          |
     I2C SCL ────▶|  SCL                          |   ── I²C compass from GPS puck
                  |                               |
