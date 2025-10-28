@@ -46,7 +46,6 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
   - Dual antenna diversity for strong link quality.
   - Connected to the Matek F405-HDTE on **UART2** (TX2/RX2) with 5V and GND.
 - **Protocol**: ExpressLRS (CRSF)
-- **Antenna Mounts**: 45° or 90° tube mounts, positioned for clear radiation pattern and cable reach.
 
 ## 🧵 Serial Ports
 
