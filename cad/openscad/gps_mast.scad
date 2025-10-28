@@ -8,7 +8,7 @@ puck_hole_d        =  0;       // mm (for M2 screws) — set to 0 for no holes
 top_plate_d        = 21;       // mm (round top OD) or for square
 top_plate_t        = 3;        // mm thickness
 
-mast_height        = 120;      // mm
+mast_height        = 60;      // mm
 mast_od            = 10;       // mm
 mast_id            = 6;        // mm (cable channel)
 mast_wall_min      = 2;        // mm (keeps OD >= ID + 2*wall)
