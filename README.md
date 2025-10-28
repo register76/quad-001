@@ -51,43 +51,54 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 ### 🧭 Matek H743-SLIM UART Reference Guide
 
-| **Port Label** | **STM32 Peripheral** | **FC PAD LABEL** | **Typical Use** | **ArduPilot SERIALx** | **Protocol** | **Notes / Tips** |
-|----------------|----------------------|-----------------|------------------------|---------------|------------------|
-| **UART1**      | USART1 | 🛰 Telemetry / RFD900 | - |`SERIAL1_PROTOCOL=2` | MAVLink | Use for RFD900 or other long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
-| **UART2**      | USART2 | 📡 GPS #1 | RX2/TX2 | `SERIAL2_PROTOCOL=23` | GPS | Pair with I²C compass on same GPS puck. |
-| **UART3**      | USART3 | 🧪 [TBD] Spare / TF-Luna serial | - | `SERIAL3_PROTOCOL=5` | CRSF | Hardware inverter-free; ideal for ExpressLRS. |
-| **UART4**      | UART4 | 📈 [TBD] ESC Telemetry / GPS #2 | - | `SERIAL4_PROTOCOL=0` | ESC TLM (auto-detect) | Use ESC TLM RX wire here for current, voltage, RPM. |
-| **UART5**      | UART5 | 🔧 [TBD] Debug / Secondary Telem / Companion Pi | - | `SERIAL5_PROTOCOL=2` | MAVLink | Good choice for bench testing or Pi link if Wi-Fi not used. |
-| **UART6**      | USART6 | 🎥 [TBD] VTX control | - | `SERIAL6_PROTOCOL=26 (Tramp)` or `28 (SmartAudio)` | VTX | TX-only. Add 1 kΩ inline resistor if noisy. |
-| **UART7**      | UART7 | 🎮 ELRS Receiver (CRSF) | RX6/TX6 | `SERIAL7_PROTOCOL=23 (ELRS)` | ELRS | Express LRS |
-| **UART8**      | UART8 | 💻 [TBD] Companion Pi (alternative) | - | `SERIAL8_PROTOCOL=2` | MAVLink | Use 57600–921600 baud. Prefer UART-Pi over USB for reliability. |
-| **USB**        | Virtual `SERIAL0` | 🔌 Ground Station | - | `SERIAL0_PROTOCOL=2` | MAVLink | Main setup + firmware loading port. |
+[H743-SLIM V3 IO Mapping Documentation](https://www.mateksys.com/?portfolio=h743-slim#tab-id-5)
 
-<!--
-### Active links
-- **GPS/Compass (HGLRC M100-5883)**
-  - **GPS (UART 5):** `SERIAL3_PROTOCOL = 5 (GPS)` @ default baud for module
-  - **Compass:** I²C (external) → enable compass and perform calibration
+| **GPIO Port Label** | **FC PAD LABEL** | **Typical Use** | **ArduPilot SERIALx** | **Protocol (value)** | **Baud** | **Notes / Tips** |
+|----------------|------------------|-----------------|-----------------------|---------------|------------------|------------------|
+| **USART1** | RX1/TX1 | 🛰 Telemetry / RFD900 | SERIAL2 | MAVLink (2) | 57 | Long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
+| **USART2** | RX2/TX2 | 📡 GPS #1 | SERIAL3 | GPS (5) | 115 | Pair with I²C compass on same GPS puck. |
+| **USART3** | RX3/TX3 | 🧪 Spare / TF-Luna serial | SERIAL4 | None (0) | | Leave unused until you need it (set to device-specific later). |
+| **UART4** | RX4/TX4 | 📈 Spare| SERIAL6 | None (0) | | Leave unused until you need it (set to device-specific later). |
+| **USART6** | RX6/TX6 / SERIAL7 |🎮 ELRS Receiver (CRSF) | SERIAL7 | ELRS(23) | 420 | Express LRS (main receiver port). Set BRD_ALT_CONFIG=1 to make RX6/TX6 a true UART; SERIAL7_OPTIONS=0 for CRSF.|
+| **UART7** | RX7/TX7 |  🎥 VTX control | SERIAL1 | Tramp (26) or SmartAudio (28) |  | Use if you want LUA/OSD VTX control. |
+| **USB**  | USB | 🔌 Ground Station | SERIAL0 | MAVLink (2) |  | Main setup + firmware loading port. |
 
-- **RC / ExpressLRS**
-  - **CRSF (UART 6):** `SERIAL5_PROTOCOL = 23 (CRSF)`  
+### Required Serial Parameters
+```
+BRD_ALT_CONFIG = 1
+SERIAL7_PROTOCOL = 23
+SERIAL7_BAUD = 420
+SERIAL7_OPTIONS = 0
+SERIAL3_PROTOCOL = 5
+SERIAL3_BAUD = 115
+```
 
-- **Motor ESC Telemetry**
-  - **ESC (UART 3):** `SERIAL2_PROTOCOL = 16 (ESC Telemetry)`  
+### Schematic
+```
+                 +-------------------------------+
+                 |       Matek H743-SLIM V3      |
+                 |        (top-side pads)        |
+                 |                               |
+    ELRS RX  ───▶|  RX6  ◀── (ELRS TX)          |
+    ELRS TX  ◀───|  TX6  ───▶ (ELRS RX)         |   ── CRSF / ELRS (SERIAL7)
+                 |                               |      BRD_ALT_CONFIG = 1
+    GPS TX  ────▶|  RX2  ◀── (GPS TX)           |      SERIAL7_PROTOCOL = 23
+    GPS RX  ◀────|  TX2  ───▶ (GPS RX)          |      SERIAL7_BAUD = 420 (CRSF)
+                 |                               |      SERIAL7_OPTIONS = 0
+    I2C SDA ────▶|  SDA                          |
+    I2C SCL ────▶|  SCL                          |   ── I²C compass from GPS puck
+                 |                               |
+    +5V (ELRS) ─▶|  5V pad near RX6/TX6          |
+    GND (ELRS) ─▶|  GND pad near RX6/TX6         |
+                 |                               |
+    +5V (GPS)  ─▶|  5V pad near RX2/TX2          |
+    GND (GPS)  ─▶|  GND pad near RX2/TX2         |
+                 +-------------------------------+
 
-- **RFD900x Telemetry**
-  - **RFD900x (UART 1):** `SERIAL?_PROTOCOL = 2 (Mavlink 2)`  
- 
-### Port Map
-| Function            | FC Port (pads) | ArduPilot params                            | Notes                    |
-|--------------------|-----------------|----------------------------------------------|--------------------------|
-| GPS (M100)         | UART **5**      | `SERIAL3_PROTOCOL=5`                         | GPS TX/RX ↔ FC RX/TX     |
-| Compass (5883)     | I²C             | Enable ext compass; run compass calibration  | On same puck             |
-| RC (ELRS CRSF)     | UART **6**      | `SERIAL5_PROTOCOL=23`                        | Set RC options as needed |
-| ESC (DYS-65A)      | UART **3**      | `SERIAL2_PROTOCOL=16`                        |                          |
-| RFD900x            | UART **1**      | `SERIAL?_PROTOCOL=2`                        |                          |
--->
-
+[Wire color convention]
+  +5V = Red   |  GND = Black   |  TX = Yellow/White   |  RX = Yellow/White   |  I²C: SDA = Green, SCL = Blue
+  ```
+  
 ## 🧭 Companion & Telemetry
 - **Telemetry**
   - [RFD900](https://rfdesign.com.au/modems/)
