@@ -29,7 +29,7 @@ hole_d        = 4;
 slot_d        = 3.2;  
 slot_len      = 0;    
 
-pattern_arm0 = [[-14,0],[13,-15],[13,15],[-14,0]];
+pattern_arm0 = [[-17,0],[13,-15],[13,15],[-17,0]];
 pattern_arm1 = pattern_arm0;
 pattern_arm2 = pattern_arm0;
 pattern_arm3 = pattern_arm0;
