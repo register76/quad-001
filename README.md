@@ -61,6 +61,7 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 | **UART4** | RX4/TX4 | 📈 Spare| SERIAL6 | None (0) | | Leave unused until you need it (set to device-specific later). |
 | **USART6** | RX6/TX6 / SERIAL7 |  🎥 VTX control | SERIAL7 | Tramp (26) or SmartAudio (28) |  | Use if you want LUA/OSD VTX control. |
 | **UART7** | RX7/TX7 | 🎮 ELRS Receiver (CRSF) | SERIAL1 |  ELRS(23) | 420 | Express LRS (main receiver port). |
+| **UART8** | RX8/TX8 | ESC Telemetry | SERIAL5 |  ESC Telemetry(16) | 115 | ESC Telemetry. |
 | **USB**  | USB | 🔌 Ground Station | SERIAL0 | MAVLink (2) |  | Main setup + firmware loading port. |
 
 ### Required Serial Parameters
