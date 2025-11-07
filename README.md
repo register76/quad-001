@@ -13,7 +13,7 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 ## Key Components
 - [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim) flight controller
-- [DYS 65A 2–8S AM32](https://pyrodrone.com/products/dys-am32-65a-2-8s-4in1-esc-30x30mm?srsltid=AfmBOopQYTArh_CXTaMVYLukG8EtwCzhfD9XbQw8DkJbP9Ws5KrN1L8A) 4-in-1 ESC (30×30)
+- [Skystars KO60 BLheli32 60A ESC](https://www.skystars-rc.com/product/ko60-blheli32-60a-3-6s-esc-support-128k-dshot1200-4-in-1-esc/) 4-in-1 ESC (30×30)
 - [3112 900KV brushless motors](https://www.amazon.com/dp/B0F7H2DN7J?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_3&th=1)
 - [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
 - [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
@@ -30,7 +30,7 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 ## ⚡ Power & Propulsion
 - Motors: 3112 900 KV brushless outrunners (14-pole).
 - Propellers: 1147 (11×4.7).
-- ESC: DYS 65 A 2–8 S AM32 4-in-1 (30×30 stack).
+- ESC: Skystars KO60 BLheli32 60A 3-6S 4-in-1 (30×30 stack).
 - Battery: 4S
 - Power rail capacitor: Installed for ESC stability.
 
