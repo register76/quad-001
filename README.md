@@ -55,50 +55,15 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 
 | **GPIO Port Label** | **FC PAD LABEL** | **Typical Use** | **ArduPilot SERIALx** | **Protocol (value)** | **Baud** | **Notes / Tips** |
 |----------------|------------------|-----------------|-----------------------|---------------|------------------|------------------|
-| **USART1** | RX1/TX1 | 🛰 Telemetry / RFD900 | SERIAL2 | MAVLink (2) | 57 | Long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
-| **USART2** | RX2/TX2 | 📡 GPS #1 | SERIAL3 | GPS (5) | 115 | Pair with I²C compass on same GPS puck. |
-| **USART3** | RX3/TX3 | 🧪 Spare / TF-Luna serial | SERIAL4 | None (0) | | Leave unused until you need it (set to device-specific later). |
-| **UART4** | RX4/TX4 | 📈 Spare| SERIAL6 | None (0) | | Leave unused until you need it (set to device-specific later). |
-| **USART6** | RX6/TX6 / SERIAL7 |  🎥 VTX control | SERIAL7 | Tramp (26) or SmartAudio (28) |  | Use if you want LUA/OSD VTX control. |
+| **USART1** | RX1/TX1 | 📈 Spare  | SERIAL2 | None (0) |  | Leave unused until you need it (set to device-specific later). |
+| **USART2** | RX2/TX2 | 📡 GPS #1 | SERIAL3 | GPS (5)  | 230 | Pair with I²C compass on same GPS puck. |
+| **USART3** | RX3/TX3 | 📈 Spare  | SERIAL4 | None (0) | | Leave unused until you need it (set to device-specific later). |
+| **UART4**  | RX4/TX4 | 🛰 Telemetry / RFD900 | SERIAL6 | MAVLink (2) | 57 | Long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
+| **USART6** | RX6/TX6 |  📈 Spare | SERIAL7 | None (0) |  | Leave unused until you need it (set to device-specific later).  |
 | **UART7** | RX7/TX7 | 🎮 ELRS Receiver (CRSF) | SERIAL1 |  ELRS(23) | 420 | Express LRS (main receiver port). |
 | **UART8** | RX8/TX8 | ESC Telemetry | SERIAL5 |  ESC Telemetry(16) | 115 | ESC Telemetry. |
 | **USB**  | USB | 🔌 Ground Station | SERIAL0 | MAVLink (2) |  | Main setup + firmware loading port. |
 
-### Required Serial Parameters
-```
-BRD_ALT_CONFIG = 0
-SERIAL1_PROTOCOL = 23
-SERIAL1_BAUD = 420
-SERIAL1_OPTIONS = 0
-SERIAL3_PROTOCOL = 5
-SERIAL3_BAUD = 115
-```
-
-### Schematic
-```
-                 +-------------------------------+
-                 |       Matek H743-SLIM V3      |
-                 |        (top-side pads)        |
-                 |                               |
-    ELRS RX  ───▶|  RX7  ◀── (ELRS TX)          |
-    ELRS TX  ◀───|  TX7  ───▶ (ELRS RX)         |   ── CRSF / ELRS (SERIAL7)
-                 |                               |      BRD_ALT_CONFIG = 1
-    GPS TX  ────▶|  RX2  ◀── (GPS TX)           |      SERIAL1_PROTOCOL = 23
-    GPS RX  ◀────|  TX2  ───▶ (GPS RX)          |      SERIAL1_BAUD = 420 (CRSF)
-                 |                               |      SERIAL1_OPTIONS = 0
-    I2C SDA ────▶|  SDA                          |
-    I2C SCL ────▶|  SCL                          |   ── I²C compass from GPS puck
-                 |                               |
-    +5V (ELRS) ─▶|  5V pad near RX6/TX6          |
-    GND (ELRS) ─▶|  GND pad near RX6/TX6         |
-                 |                               |
-    +5V (GPS)  ─▶|  5V pad near RX2/TX2          |
-    GND (GPS)  ─▶|  GND pad near RX2/TX2         |
-                 +-------------------------------+
-
-[Wire color convention]
-  +5V = Red   |  GND = Black   |  TX = Yellow/White   |  RX = Yellow/White   |  I²C: SDA = Green, SCL = Blue
-  ```
   
 ## 🧭 Companion & Telemetry
 - **Telemetry**
