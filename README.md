@@ -47,6 +47,16 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
   - Connected to the Matek F405-HDTE on **UART2** (TX2/RX2) with 5V and GND.
 - **Protocol**: ExpressLRS (CRSF)
 
+## 📹 Cameras
+
+### [**RunCam 5 Orange (Primary Recording Camera)**](https://www.runcam.com/download/RunCam-5-OR/RunCam5-or-manual-en.pdf)
+- **Role:** Onboard HD recording for post-flight analysis & footage  
+- **Mount:** 3D-printed TPU forward mount (shock-isolated)  
+- **Resolution:** Up to 4K @ 30 FPS, ~60 Mb/s bitrate  
+- **Orientation:** *Mounted inverted* → `rotate=180` in config  
+- **Storage:** microSD (U3 recommended; ≥64GB, exFAT)  
+- **Gyro Data:** Enabled for post-processing stabilization
+
 ## 🧵 Serial Ports
 
 ### 🧭 Matek H743-SLIM UART Reference Guide
