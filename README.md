@@ -57,6 +57,20 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 - **Storage:** microSD (U3 recommended; ≥64GB, exFAT)  
 - **Gyro Data:** Enabled for post-processing stabilization
 
+### [**Foxeer Mini Standard Razer (FPV Camera)**](https://www.foxeer.com/foxeer-mini-standard-razer-fpv-camera-g-266)
+- **Role:** FPV
+- **Sensor & Resolution:** 1/3" CMOS sensor, 1200 TVL analog FPV video.
+- **Aspect Ratios:** Switchable **4:3 / 16:9** output.
+- **Field of View:** Wide FOV depending on lens (approx. 125° H / 155° D in 4:3; ~145° D in 16:9).
+- **Low-Light Performance:** 0.01 Lux, 90 dB WDR, 3DNR, Day/Night modes.
+- **Video System:** NTSC / PAL switchable; standard **CVBS analog output**.
+- **Voltage Input:** **4.5–25 V** wide voltage range.
+- **Operating Temp:** –10 °C to +50 °C.
+- **Weight:** ~12 g.
+- **Form Factor:** Compact **22 × 22 mm mini size** for easy mounting.
+
+
+
 ## 🧵 Serial Ports
 
 ### 🧭 Matek H743-SLIM UART Reference Guide
