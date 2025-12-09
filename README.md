@@ -69,7 +69,15 @@ Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D
 - **Weight:** ~12 g.
 - **Form Factor:** Compact **22 × 22 mm mini size** for easy mounting.
 
+## 📡 VTX
 
+### [*TBS Unify Pro32 (5.8 GHz)**](https://www.team-blacksheep.com/products/prod:unifypro32_hv?srsltid=AfmBOorDLRIW3rCqve6KWcg1UdovrVPWY-VS8diG2t2JrGP0k7rQRZgc)
+- High-performance analog VTX
+- SmartAudio support (VTX control via OSD/Mission Planner)
+- Output power profiles: 25 mW → 100 mW → 400 mW → 800 mW+
+- MMCX antenna connector
+- Excellent noise rejection & strong long-range capability
+- Wide input voltage, very stable under voltage sag
 
 ## 🧵 Serial Ports
 
