@@ -2,6 +2,10 @@
   <img src="docs/hero_banner.png" alt="Quad-001 Hero Banner" width="100%">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/QUAD--001-v0.6.3-ff6a00?style=for-the-badge&labelColor=050816">
+</p>
+
 # Quad-001 — Endurance-Optimized S500 Quadcopter  
 Version: **v0.6.3** (December 2025)
 
