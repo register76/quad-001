@@ -1,167 +1,167 @@
-# Custom Quadcopter Project
+# Quad-001 — Endurance-Optimized S500 Quadcopter  
+Version: **v0.6.3** (December 2025)
 
-This is an endurance-optimized S 500 mm quadcopter powered by a Matek H743-SLIM V3 flight controller and running ArduPilot firmware.  
+Quad-001 is a long-term engineering project to design, build, tune, and document a
+high-efficiency 450–500 mm class quadcopter focused on endurance, stability,
+and modular expandability. The project includes CAD parts, firmware configuration,
+structural tuning, telemetry integration, and future autonomy and FPV improvements.
 
-## Project Status
-🚧 Work in Progress — Frame and wiring complete, first flight complete, initial tuning complete.  
-Next steps: upgrade frame, refine wiring, upgrade flight controller, finalize 3D-printed component mounts, integrate camera, rfd900, and companion computer.
+---
 
-## Goals
-- Max flight time
-- Modular design
-- Open-frame for FPV and sensor expansion
+## 🛠️ Current Configuration (v0.6.3)
 
-## Key Components
-- [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim) flight controller
-- [Skystars KO60 BLheli32 60A ESC](https://www.skystars-rc.com/product/ko60-blheli32-60a-3-6s-esc-support-128k-dshot1200-4-in-1-esc/) 4-in-1 ESC (30×30)
-- [3112 900KV brushless motors](https://www.amazon.com/dp/B0F7H2DN7J?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_3&th=1)
-- [1147 carbon props](https://www.amazon.com/dp/B08137LLK7?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1)
-- [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver) Receiver
-- [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2)
-- [HGLRC GPS / Compass](https://www.hglrc.com/products/m100-5883-gps?srsltid=AfmBOoq5upiWIUeaING3ysRxMJ71UZ72I3lojhzPYYxISSO0KZAK4p26)
-- [RFD900x](https://rfdesign.com.au/modems/)
-- 4S LiPo battery
+**Airframe**
+- S500 frame (final decision locked)
+- Carbon-fiber stiffeners + TPU/PLA vibration isolation
+- Custom 4-piece landing-leg damper system
+- New landing leg installed
 
-## 📐 Frame & Layout
-- [S500 X-frame design](https://www.amazon.com/dp/B01N0AX1MZ?ref=ppx_yo2ov_dt_b_fed_asin_title)
-- [FC Adapter Plate Mount](./cad/openscad/fc_plate_30x30_heatset_rect_50x55_engraved.scad)
-- [S500 Top Mount Spacer](./cad/stl/S500_Spacerv4.stl)
+**Propulsion**
+- Motors: 3112-900 KV  
+- Props: **APC 10 × 4.7** (current set installed)  
+- Battery: 4S 5000 mAh LiPo  
+- ESC: SkyStars KO60 BLHeli32 60A 4-in-1
 
-## ⚡ Power & Propulsion
-- Motors: 3112 900 KV brushless outrunners (14-pole).
-- Propellers: 1147 (11×4.7).
-- ESC: Skystars KO60 BLheli32 60A 3-6S 4-in-1 (30×30 stack).
-- Battery: 4S
-- Power rail capacitor: Installed for ESC stability.
+**Flight Control**
+- Matek H743-SLIM V3  
+- GPS/Compass: HGLRC M100  
+- Receiver: ExpressLRS RP4TD  
+- Telemetry: **RFD900X** (MAVLink2, SERIAL6 @ 57 600 baud)
 
-## 🎛️ Flight Controller & Electronics
-- Flight Controller: [Matek H743-SLIM V3](https://www.mateksys.com/?portfolio=h743-slim)
-- Receiver: [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
+**Cameras / FPV (coming in v0.7)**
+- Foxeer Razer Micro FPV camera  
+- TBS Unify Pro32 HV VTX  
+- Foxeer Lollipop Antenna  
+- **RunCam Orange 5** (4K high-resolution recording camera)
 
-## 🎮 Radio & Receiver
-- **Transmitter**: [RadioMaster Boxer Controller](https://radiomasterrc.com/products/boxer-radio-controller-m2) (ExpressLRS 2.4 GHz)
-  - Compact, full-size gimbals, supports long-range ELRS.
-  - Paired directly with the RP4TD receiver over CRSF protocol.
-- **Receiver**: [RadioMaster RP4TD](https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver)
-  - Dual antenna diversity for strong link quality.
-  - Connected to the Matek F405-HDTE on **UART2** (TX2/RX2) with 5V and GND.
-- **Protocol**: ExpressLRS (CRSF)
+---
 
-## 📹 Cameras
+## 🔗 Quick Component Reference (Web Links)
 
-### [**RunCam 5 Orange (Primary Recording Camera)**](https://www.runcam.com/download/RunCam-5-OR/RunCam5-or-manual-en.pdf)
-- **Role:** Onboard HD recording for post-flight analysis & footage  
-- **Mount:** 3D-printed TPU forward mount (shock-isolated)  
-- **Resolution:** Up to 4K @ 30 FPS, ~60 Mb/s bitrate  
-- **Orientation:** *Mounted inverted* → `rotate=180` in config  
-- **Storage:** microSD (U3 recommended; ≥64GB, exFAT)  
-- **Gyro Data:** Enabled for post-processing stabilization
+| Component | Model / Notes | Link |
+|----------|----------------|------|
+| **Frame** | S500 500 mm frame | https://www.amazon.com/s?k=S500+frame |
+| **Motors** | 3112-900KV | https://www.amazon.com/s?k=3112+900kv+motor |
+| **Props** | APC 10×4.7 SF | https://www.apcprop.com/product/10x4-7sf-b4/ |
+| **ESC** | Skystars KO60 4-in-1 BLHeli32 | https://www.amazon.com/s?k=skystars+ko60 |
+| **Flight Controller** | Matek H743-SLIM V3 | http://www.mateksys.com/?portfolio=h743-slim |
+| **GPS / Compass** | HGLRC M100 | https://www.hglrc.com/products/hglrc-m100-mini-m8n-gps |
+| **Receiver** | ExpressLRS RP4TD | https://www.expresslrs.org/receivers/rp4td/ |
+| **Transmitter (RC)** | Radiomaster Boxer | https://www.radiomasterrc.com/products/boxer-radio-controller |
+| **Telemetry Radio** | RFD900X | https://store.rfdesign.com.au/rfd-900x/ |
+| **FPV Camera** | Foxeer Razer Micro | https://www.foxeer.com/foxeer-mini-standard-razer-fpv-camera-g-266 |
+| **VTX** | TBS Unify Pro32 HV | https://team-blacksheep.com/shop/pro32hv |
+| **Antenna** | Foxeer Lollipop | https://www.amazon.com/s?k=foxeer+lollipop |
+| **HD Camera** | **RunCam Orange 5** | https://shop.runcam.com/runcam-5-orange/ |
+| **Companion Computer** | Rpanion (Pi-based) | https://www.rpanion.com/software/rpanion-server/ |
+| **ArduPilot Firmware** | ArduCopter | https://firmware.ardupilot.org/Copter/stable/ |
 
-### [**Foxeer Mini Standard Razer (FPV Camera)**](https://www.foxeer.com/foxeer-mini-standard-razer-fpv-camera-g-266)
-- **Role:** FPV
-- **Sensor & Resolution:** 1/3" CMOS sensor, 1200 TVL analog FPV video.
-- **Aspect Ratios:** Switchable **4:3 / 16:9** output.
-- **Field of View:** Wide FOV depending on lens (approx. 125° H / 155° D in 4:3; ~145° D in 16:9).
-- **Low-Light Performance:** 0.01 Lux, 90 dB WDR, 3DNR, Day/Night modes.
-- **Video System:** NTSC / PAL switchable; standard **CVBS analog output**.
-- **Voltage Input:** **4.5–25 V** wide voltage range.
-- **Operating Temp:** –10 °C to +50 °C.
-- **Weight:** ~12 g.
-- **Form Factor:** Compact **22 × 22 mm mini size** for easy mounting.
+---
 
-## 📡 VTX
+## 🚁 Project Status Summary
 
-### [**TBS Unify Pro32 (5.8 GHz)**](https://www.team-blacksheep.com/products/prod:unifypro32_hv?srsltid=AfmBOorDLRIW3rCqve6KWcg1UdovrVPWY-VS8diG2t2JrGP0k7rQRZgc)
-- High-performance analog VTX
-- SmartAudio support (VTX control via OSD/Mission Planner)
-- Output power profiles: 25 mW → 100 mW → 400 mW → 800 mW+
-- MMCX antenna connector
-- Excellent noise rejection & strong long-range capability
-- Wide input voltage, very stable under voltage sag
+Quad-001 is structurally complete and in the late-tuning phase for v0.6.x:
 
-## 🧵 Serial Ports
+- New APC 10×4.7 props installed  
+- All 4 dampers + new landing leg installed  
+- First stable flight on 10×4.7 completed (v0.6.3 milestone)  
+- RFD900X MAVLink link fully operational  
+- Initial FFT analysis complete (fundamental ~86 Hz)  
+- Preparing for notch tuning, altitude-loop refinement, and rate-loop steps
 
-### 🧭 Matek H743-SLIM UART Reference Guide
+The aircraft is now optimized for clean logs and ready for advanced tuning.
 
-[H743-SLIM V3 IO Mapping Documentation](https://www.mateksys.com/?portfolio=h743-slim#tab-id-5)
+---
 
-| **GPIO Port Label** | **FC PAD LABEL** | **Typical Use** | **ArduPilot SERIALx** | **Protocol (value)** | **Baud** | **Notes / Tips** |
-|----------------|------------------|-----------------|-----------------------|---------------|------------------|------------------|
-| **USART1** | RX1/TX1 | 📈 Spare  | SERIAL2 | None (0) |  | Leave unused until you need it (set to device-specific later). |
-| **USART2** | RX2/TX2 | 📡 GPS #1 | SERIAL3 | GPS (5)  | 230 | Pair with I²C compass on same GPS puck. |
-| **USART3** | RX3/TX3 | 📈 Spare  | SERIAL4 | None (0) | | Leave unused until you need it (set to device-specific later). |
-| **UART4**  | RX4/TX4 | 🛰 Telemetry / RFD900 | SERIAL6 | MAVLink (2) | 57 | Long-range radio. Provide dedicated 5 V ≥ 2 A BEC. |
-| **USART6** | RX6/TX6 |  📈 Spare | SERIAL7 | None (0) |  | Leave unused until you need it (set to device-specific later).  |
-| **UART7** | RX7/TX7 | 🎮 ELRS Receiver (CRSF) | SERIAL1 |  ELRS(23) | 420 | Express LRS (main receiver port). |
-| **UART8** | RX8/TX8 | ESC Telemetry | SERIAL5 |  ESC Telemetry(16) | 115 | ESC Telemetry. |
-| **USB**  | USB | 🔌 Ground Station | SERIAL0 | MAVLink (2) |  | Main setup + firmware loading port. |
+## 🧪 Tuning Progress (v0.6.x)
 
-  
-## 🧭 Companion & Telemetry
-- **Telemetry**
-  - [RFD900](https://rfdesign.com.au/modems/)
-- **Companion computer** *TBD* Raspberry Pi 3 running Rpanion.
-- **Camera options** *TBD* 
-  - [FOXEERFPV Camera Razer Mini](https://www.amazon.com/gp/product/B07ZKPDPLM/ref=ox_sc_saved_title_1?smid=A1S7UXKBIJXX1H&th=1)
-  - [HGLRC Zeus350mW VTX](https://www.amazon.com/gp/product/B08MQ4ZDVF/ref=ox_sc_saved_title_2?smid=A399B0GHKF2YQX&psc=1)
-  - [FOXEER Lollipop FPV U.FL Antenna 5.8G](https://www.amazon.com/gp/product/B07WLCFM5H/ref=ox_sc_saved_title_3?smid=A1JGQIWP459RKC&psc=1)
+**Completed**
+- Hover tests with 10×4.7 props  
+- Initial FFT → fundamental ~86 Hz  
+- Basic position hold tuning  
+- RFD900 integration for live tuning  
+- Leg dampers & structural stiffening  
+- Baseline logs for rate loops and altitude behavior  
 
-## CAD & 3D Models
-- OpenSCAD, and STL files in [`/cad`](./cad)
+**Upcoming**
+- Update harmonic notch filter using new FFT  
+- Altitude-loop refinement  
+- Step-response rate-loop flights  
+- Autotune  
+- Post-Autotune filter + PID verification  
 
-## Tuning & Flight Logs
-- PID tuning checklist: [`docs/tuning/tuning-checklist.md`](./docs/tuning/tuning-checklist.md)
-- Flight logs: [`/flight-logs`](./flight-logs)
+---
 
-## Firmware & Params
-- ArduPilot config: [`firmware/ardupilot/quad.param`](./firmware/ardupilot/quad.param)
-- ESC config: [`firmware/esc/`](./firmware/esc/)
+## 🎥 FPV Integration (v0.7 milestone)
 
-<details>
-<summary><strong>Repository Structure</strong></summary>
+Planned tasks:
+- Wire Foxeer camera → H743  
+- Install TBS Unify Pro32 HV  
+- Install and tune Lollipop antenna  
+- Noise + EMI validation  
+- Ground station receiver testing  
+- Action cam mounting tests for **RunCam Orange 5**
 
-```
-quad-001/
-│
-├── docs/                # Build notes, wiring diagrams, schematics, checklists
-│   ├── bom/             # Bill of materials spreadsheets
-│   ├── images/          # Build photos
-│   ├── setup/           # Step-by-step guides, calibration notes
-│   └── wiring/          # ESC-FC diagrams, pinouts
-│
-├── firmware/            # Flight controller firmware configs and parameters
-│   ├── ardupilot/       # Parameter files (.param) and tuning notes
-│   ├── esc/             # ESC Parameters
-│   ├── qgroundcontrol/  # Custom QGC mods, QML, build scripts
-│   └── stm32/           # Future STM32 FC project (drivers, experiments)
-│
-├── companion/           # Raspberry Pi or other onboard computer code
-│   ├── video/           # Streaming scripts (GStreamer, RTSP/UDP pipelines)
-│   ├── mavlink/         # MAVLink router configs, companion scripts
-│   └── utils/           # Helper scripts, test tools
-│
-├── cad/                 # 3D print and mechanical design
-│   ├── f360/            # Fusion 360 source files (.f3d, .step)
-│   ├── openscad/        # OpenSCAD models and scripts (.scad)
-│   ├── stl/             # Exported printable parts
-│   └── renders/         # Screenshots, previews
-│
-├── sim/                 # Simulation environments
-│   ├── sitl/            # ArduPilot SITL configs
-│   └── gazebo/          # Gazebo or other sim setups
-│
-├── tests/               # Bench tests, motor order tests, ESC/motor logs
-│
-├── scripts/             # Utility scripts (build, flashing, deployment)
-│
-├── images/              # Build photos
-├── models/              # Legacy folder (consolidate into /cad long term)
-├── flight-logs/         # Flight logs
-├── LICENSE.md           # Project license
-└── README.md            # Project overview, quickstart, links
-```
+---
 
-</details>
+## 🧭 Autonomy & Sensors (v0.8 milestone)
 
-## License
-This project is licensed under the [MIT License](./LICENSE).
+- Downward LiDAR (TF-Luna I2C preferred)  
+- Enhanced altitude hold  
+- AUTO missions  
+- RTL refinement  
+- Speed-limit switches via PSC_ANGLE_MAX  
+- Companion-computer extensions (Rpanion, MAVLink routing, future apps)
+
+---
+
+## 🧱 CAD / Mechanical Design
+
+Custom-designed and parametric components include:
+
+- Arm stiffeners (TPU → CF → PLA sandwich)  
+- Landing gear dampers  
+- GPS mast  
+- Battery tray  
+- RFD900 mounting hardware  
+- Prop guard experiments for 1047 props  
+- Camera mount designs, including **RunCam Orange 5** mounting options  
+
+---
+
+## 🎯 Roadmap
+
+**v0.6.x — Structural & Tuning**
+- ✔ Frame upgrade  
+- ✔ RFD900 integration  
+- ✔ New props + dampening  
+- ☐ Notch tuning  
+- ☐ Rate/altitude tuning  
+- ☐ Autotune  
+
+**v0.7 — FPV**
+- ☐ Camera + VTX integration  
+- ☐ Antenna work  
+- ☐ Ground station receiver  
+- ☐ Wiring cleanup  
+- ☐ RunCam mount + test flights  
+
+**v0.8 — Autonomy**
+- ☐ Downward LiDAR  
+- ☐ AUTO missions  
+- ☐ Advanced RTL  
+- ☐ Speed limits  
+- ☐ Companion-computer apps  
+
+---
+
+## 📄 License
+
+See `LICENSE` for details.
+
+---
+
+## ✨ Notes
+
+Quad-001 is a long-term iterative engineering project.  
+All CAD, firmware, wiring, and tuning details evolve alongside each milestone.
