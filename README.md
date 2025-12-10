@@ -4,6 +4,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/QUAD--001-v0.6.3-ff6a00?style=for-the-badge&labelColor=050816">
+  <img src="https://img.shields.io/badge/S500_•_4S_•_APC_10×4.7-Hardware_Profile-ff6a00?style=for-the-badge&labelColor=050816">
+  <img src="https://img.shields.io/badge/AUW-1820g-ff6a00?style=for-the-badge&labelColor=050816">
 </p>
 
 # Quad-001 — Endurance-Optimized S500 Quadcopter  
