@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/hero_banner.png" alt="Quad-001 Hero Banner" width="100%">
+</p>
+
 # Quad-001 — Endurance-Optimized S500 Quadcopter  
 Version: **v0.6.3** (December 2025)
 
