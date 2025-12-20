@@ -150,9 +150,9 @@ Custom-designed and parametric components include:
 - ☐ Autotune  
 
 **v0.7 — FPV**
-- ☐ Camera + VTX integration  
-- ☐ Antenna work  
-- ☐ Ground station receiver  
+- ✔ Camera + VTX integration  
+- ✔ Antenna work  
+- ✔ Ground station receiver  
 - ☐ Wiring cleanup  
 - ☐ RunCam mount + test flights  
 
