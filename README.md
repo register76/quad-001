@@ -145,8 +145,8 @@ Custom-designed and parametric components include:
 - ✔ Frame upgrade  
 - ✔ RFD900 integration  
 - ✔ New props + dampening  
-- ☐ Notch tuning  
-- ☐ Rate/altitude tuning  
+- ✔ Notch tuning  
+- ✔ Rate/altitude tuning  
 - ☐ Autotune  
 
 **v0.7 — FPV**
